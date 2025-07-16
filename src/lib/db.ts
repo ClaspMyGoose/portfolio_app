@@ -1,18 +1,21 @@
 
 /* eslint-disable import/first */
-import dotenv from 'dotenv'
+// * svelte kit handles env files differently 
+//import dotenv from 'dotenv'
+
+import { env } from '$env/dynamic/private'
 import pg from 'pg'
 
 
-dotenv.config({ path: __dirname+'/.env'}); 
 
 const { Pool } = pg; 
 
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    port: 5432
+    user: env.DB_USER,
+    host: env.DB_HOST,
+    database: env.DB_NAME,
+    password: env.DB_PASSWORD,
+    port: parseInt(env.DB_PORT || '5432')
 })
 
 export default pool 
