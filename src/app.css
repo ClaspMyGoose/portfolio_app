@@ -1,4 +1,8 @@
 
+body {
+  margin: 0px; 
+}
+
 /* Navigation Styles */
 .navbar {
   background: #5A89B6;
@@ -9,9 +13,9 @@
 }
 
 .nav-container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,10 +109,16 @@
 
 /* Mobile menu */
 .mobile-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 200;
+  border: 1px solid #e5e7eb;
   display: none;
   flex-direction: column;
   background: #eaeff2;
-  border-top: 1px solid #e5e7eb;
   padding: 1rem;
   gap: 1rem;
 }
@@ -119,6 +129,7 @@
   font-weight: 500;
   padding: 0.5rem 0;
   border-bottom: 1px solid #f3f4f6;
+  text-align: center;
 }
 
 .mobile-menu a:hover {
@@ -126,8 +137,8 @@
 }
 
 .mobile-menu .nav-button {
-  align-self: flex-start;
-  margin-top: 0.5rem;
+  align-self: center;
+  /* margin-top: 0.5rem; */
 }
 
 /* Mobile styles */
@@ -146,6 +157,7 @@
   
   .nav-container {
     padding: 0 1rem;
+    position: relative;
   }
 }
 
@@ -158,4 +170,75 @@
   .nav-links {
     gap: 1.5rem;
   }
+}
+
+
+/* ! Multicolor underline */
+/* Option 3: Simple multi-color underline */
+.underline-highlight {
+  position: relative;
+  color: #eaeff2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.underline-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+  transition: width 0.4s ease;
+}
+
+.underline-highlight:hover::after {
+  width: 100%;
+}
+
+.underline-highlight:hover {
+  color: #eaeff2;
+}
+
+
+/* ! button color transition */
+
+.clip-button {
+  position: relative;
+  background: #B45AB6;;
+  color: #eaeff2;
+  border: 2px solid #B45AB6;
+  padding: 0.5rem 1.0rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.4s ease;
+}
+
+.clip-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #eaeff2;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.4s ease;
+  z-index: 1;
+}
+
+.clip-button:hover::before {
+  clip-path: inset(0 0 0 0);
+}
+
+.clip-button:hover {
+  color: #B45AB6;
+}
+
+.clip-button span {
+  position: relative;
+  z-index: 2;
 }
