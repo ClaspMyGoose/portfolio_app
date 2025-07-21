@@ -3,7 +3,8 @@ body {
   margin: 0px; 
 }
 
-/* Navigation Styles */
+/* ~ Navigation Bar */
+/* ~~~~~~~~~~~~~~~~~~~~~~ */
 .navbar {
   background: #5A89B6;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -141,48 +142,18 @@ body {
   /* margin-top: 0.5rem; */
 }
 
-/* Mobile styles */
-@media (max-width: 767px) {
-  .nav-links {
-    display: none;
-  }
-  
-  .hamburger {
-    display: flex;
-  }
-  
-  .mobile-menu.open {
-    display: flex;
-  }
-  
-  .nav-container {
-    padding: 0 1rem;
-    position: relative;
-  }
-}
-
-/* Tablet styles */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .nav-container {
-    padding: 0 1.5rem;
-  }
-  
-  .nav-links {
-    gap: 1.5rem;
-  }
-}
 
 
-/* ! Multicolor underline */
+/* * Multicolor underline */
 /* Option 3: Simple multi-color underline */
-.underline-highlight {
+.name-underline {
   position: relative;
   color: #eaeff2;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.underline-highlight::after {
+.name-underline::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -193,16 +164,16 @@ body {
   transition: width 0.4s ease;
 }
 
-.underline-highlight:hover::after {
+.name-underline:hover::after {
   width: 100%;
 }
 
-.underline-highlight:hover {
+.name-underline:hover {
   color: #eaeff2;
 }
 
 
-/* ! button color transition */
+/* * button color transition */
 
 .clip-button {
   position: relative;
@@ -241,4 +212,75 @@ body {
 .clip-button span {
   position: relative;
   z-index: 2;
+}
+
+
+
+/* ~ Generic Section and Section Container Wrappers */
+/* ~~~~~~~~~~~~~~~~~~~~~~ */
+
+.section {
+  width: 100%;
+  padding: 4rem 0; /* Generous top/bottom spacing */
+}
+
+.section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+/* ~ Media Styles */
+/* ~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Responsive padding adjustments */
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0; /* More space on larger screens */
+  }
+  
+  .section .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section .container {
+    padding: 0 3rem;
+  }
+}
+
+
+
+/* * Mobile styles */
+@media (max-width: 767px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .mobile-menu.open {
+    display: flex;
+  }
+  
+  .nav-container {
+    padding: 0 1rem;
+    position: relative;
+  }
+
+}
+
+/* * Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+  }
 }

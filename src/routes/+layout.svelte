@@ -25,7 +25,7 @@
 <nav class="navbar">
   <div class="nav-container">
     <!-- Home link on the left -->
-    <a href="/" class="nav-home"><span class="underline-highlight">Michael Bearden</span></a>
+    <a href="/" class="nav-home"><span class="name-underline">Michael Bearden</span></a>
     
     <!-- Desktop navigation links (hidden on mobile) -->
     <div class="nav-links">
@@ -41,7 +41,6 @@
       <span></span>
       <span></span>
       <span></span>
-	    <span></span>
     </button>
   </div>
   
@@ -54,8 +53,6 @@
       <button class="nav-button">Download Resume</button>
   </div>
 </nav>
-
-
 
 
 {@render children()}

@@ -1,10 +1,42 @@
-<!-- <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<script lang="ts">
+	import type { PageData }  from "./$types";
 
-  <h1 class="text-3xl sm:text-4xl font-bold text-primary">Home /</h1>
-  <p class="text-base sm:text-lg text-secondary leading-relaxed">What does this text look like?</p>
-</div> -->
+  const { projects, experience, writing }: PageData = $props()
+</script>
 
 
-<div>
-    <h1>Home</h1>
-</div>
+<!-- Recent Projects -->
+<section class="section">
+  <div class="container">
+
+  </div>
+</section>
+
+<!-- experience -->
+<section class="section">
+  <div class="container">
+
+  </div>
+</section>
+
+<!-- writing -->
+
+<section class="section">
+  <div class="container">
+    <h2>Various Writings</h2>
+      <div class='fake-wrap'>
+        <h3>Article 1</h3>
+        <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
+          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+        </p>
+        <div class="fake-tag"></div>
+      </div>
+
+
+  </div>
+</section>
+
+<!--  -->
