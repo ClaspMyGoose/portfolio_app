@@ -9,13 +9,12 @@ export async function load() {
         writing: []
     }
 
-    try {
+    try { 
         const result = await pool.query('SELECT * FROM project;')
         results.projects = result.rows
     } catch(error) {
         console.error(`DB error: ${error}`);
     }
-
 
     return results;
 }

@@ -30,6 +30,8 @@
 	},
 	"dependencies": {
 		"dotenv": "^17.2.0",
-		"pg": "^8.16.3"
+		"lucide-svelte": "^0.525.0",
+		"pg": "^8.16.3",
+		"simple-icons": "^15.7.0"
 	}
 }

@@ -6,6 +6,7 @@ export async function load() {
 
     try {
         const result = await pool.query('SELECT * FROM project;')
+        // console.log(result.rows)
         return {
             rows: result.rows,
             error: null

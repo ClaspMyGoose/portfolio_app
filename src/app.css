@@ -25,16 +25,13 @@ body {
 
 /* Home link */
 .nav-home {
-  font-weight: 600;
+  font-weight: 450;
   font-size: 1.25rem;
   color: #eaeff2;
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.nav-home:hover {
-  color: #5A5BB6;
-}
 
 /* Desktop navigation links */
 .nav-links {
@@ -125,16 +122,18 @@ body {
 }
 
 .mobile-menu a {
-  color: #666;
+  color: black;
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #f3f4f6;
+  padding: 0.25rem 0;
   text-align: center;
+  vertical-align: center;
 }
 
 .mobile-menu a:hover {
-  color: #333;
+  color: #446F99;
+  border-bottom: 1px solid;
+  border-color: black;
 }
 
 .mobile-menu .nav-button {
@@ -228,6 +227,99 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+
+
+/* ~ Introduction Button Styling */
+/* ~~~~~~~~~~~~~~~~~~~~~~ */
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Base button styling */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* Primary button (Get in touch) */
+.btn-primary {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+  transform: translateY(-1px);
+}
+
+/* Secondary buttons (GitHub, LinkedIn) */
+.btn-secondary {
+  background-color: transparent;
+  color: #666;
+  border: 1px solid #e0e0e0;
+}
+
+.btn-secondary:hover {
+  background-color: #f5f5f5;
+  color: #333;
+  border-color: #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .button-group {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .btn {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+
+
+
+/* ~ Tag Stylings */
+/* ~~~~~~~~~~~~~~~~~~~~~~ */
+
+.tag-pill {
+  display: inline-block;
+  background-color: #f1f5f9; /* Light gray background */
+  color: #64748b; /* Medium gray text */
+  padding: 0.375rem 0.75rem;
+  border-radius: 1rem; /* Very rounded */
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  border: none;
+}
+
+.tag-rect {
+  display: inline-block;
+  background-color: #f8fafc; /* Very light gray */
+  color: #475569; /* Darker gray text */
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem; /* Subtle rounded corners */
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  border: 1px solid #e2e8f0; /* Light border */
 }
 
 
