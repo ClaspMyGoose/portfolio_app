@@ -1,5 +1,10 @@
 <script>
 	import '../app.css';
+  import { Mail } from 'lucide-svelte';
+  import { siGithub } from 'simple-icons';
+  import BrandIcon from "$lib/BrandIcon.svelte";
+  import LinkedInIcon from "$lib/LinkedInIcon.svelte";
+
 
   let menuToggled = false; 
 
@@ -56,5 +61,21 @@
 
 
 {@render children()}
+
+
+<div class="hr-container">
+  <hr>
+</div>
+<footer>
+  <div class="footer-info">
+    <h3>Systems design with humans in mind</h3>
+    <p>Working independently / Open to FTE roles</p>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:michael.bearden1@outlook.com"><Mail size={14}/></a>
+    <a href="https://github.com/ClaspMyGoose"><BrandIcon icon={siGithub} size={14}/></a>
+    <a href="https://www.linkedin.com/in/michael-bearden-02486726a"><LinkedInIcon size={14}/></a>
+  </div>
+</footer>
 
 

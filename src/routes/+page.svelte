@@ -18,7 +18,7 @@
 
 <section class="section">
   <div class="container">
-    <div class='fake-wrap'>
+    <div class="intro-component">
       <h1>
         Systems design with humans in mind
       </h1>
@@ -28,15 +28,15 @@
         Interested in the efficiency and structural harmony of business processes and their measurement.
       </p>
       <div class="button-group">
-        <a href="mailto:your@email.com" class="btn btn-primary">
+        <a href="mailto:michael.bearden1@outlook.com" class="btn btn-primary">
           <Mail size={16}/>
           Get in touch
         </a>
-        <a href="https://github.com/yourusername" class="btn btn-secondary">
+        <a href="https://github.com/ClaspMyGoose" class="btn btn-secondary">
           <BrandIcon icon={siGithub} size={16}/>
           GitHub
         </a>
-        <a href="https://linkedin.com/in/yourusername" class="btn btn-secondary">
+        <a href="https://www.linkedin.com/in/michael-bearden-02486726a/" class="btn btn-secondary">
           <LinkedInIcon size={16}/>
           LinkedIn
         </a>
@@ -51,19 +51,23 @@
   <div class="container">
     <h2>Highlighted Projects</h2>
     {#if projects}
-    <div class='fake-wrap'>
+    <div class="project-component">
         {#each projects as project}
           <img src={`data:image/png;base64,${project.project_thumbnail}`} alt="Dynamic generated alt text">
-          <div class="project-header">
-            <h3>{project.project_name}</h3>
-            <span class="tag-pill">{project.project_tags[0]}</span>
-          </div>
-          <div class="project-footer">
-            <p>{project.project_description}</p>
-            {#each project.project_tags as tag}
-            <span class="tag-rect">{tag}</span>
-            {/each}
-            <span><BrandIcon icon={siGithub} size={16}/>View Source</span>    
+          <div class="project-content">
+            <div class="project-header">
+              <h3>{project.project_name}</h3>
+              <span class="tag-pill">{project.project_tags[0]}</span>
+            </div>
+            <div class="project-footer">
+              <p>{project.project_description}</p>
+              <div>
+                {#each project.project_tags as tag}
+                <span class="tag-rect">{tag}</span>
+                {/each}
+              </div>
+              <span><BrandIcon icon={siGithub} size={16}/>View Source</span>    
+            </div>
           </div>
         {/each}
     </div>
@@ -78,29 +82,29 @@
 <section class="section">
   <div class="container">
     <h2>Recent Experience</h2>
-    <div class='fake-wrap'>
-      <div class='exp-header'>
-        <div class='exp-where'>
+    <div class="exp-component">
+      <div class="exp-header">
+        <div class="exp-where">
           <h3>Manager - Reporting & Analytics</h3>
           <h4>HCA</h4>
         </div>  
-        <div class='exp-when'>
+        <div class="exp-when">
           <span>July 2024 - April 2025</span>
         </div>
       </div>
       <ul>
         <li>Lead and mentor team of 5 BI Analysts with differing skillsets and experience levels</li>
         <li>Evaluate, scope, and execute a variety of enterprise-scale data and reporting initiatives across service lines</li>
-        <li>Partner with assigned IT resources to conceptually plan, build, test, and deploy analytical infrastructure in data warehouse to business requirements</li>
+        <li>Partner with assigned IT resources to conceptually plan, build, test, and deploy analytical infrastructure to business requirements</li>
       </ul>  
     </div>
-    <div class='fake-wrap'>
-      <div class='exp-header'>
-        <div class='exp-where'>
+    <div class="exp-component">
+      <div class="exp-header">
+        <div class="exp-where">
           <h3>Business Intelligence Analyst I/II</h3>
           <h4>HCA</h4>
         </div>  
-        <div class='exp-when'>
+        <div class="exp-when">
           <span>January 2022 - June 2024</span>
         </div>
       </div>
@@ -118,37 +122,49 @@
 <section class="section">
   <div class="container">
     <h2>Various Writings</h2>
-      <div class='fake-wrap'>
-        <h3>Article 1</h3>
+      <div class="writing-component">
+        <div class="writing-header">
+          <h3>Article 1</h3>
+          <div>
+            <span class="tag-pill">Human Behavior X Process Design</span>
+          </div>
+        </div>
         <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
         </p>
-        <span class="tag-pill">Human Behavior X Process Design</span>
         <a href='/' >Read the full article</a>
       </div>
-      <div class='fake-wrap'>
-        <h3>Article 2</h3>
+      <div class="writing-component">
+        <div class="writing-header">
+          <h3>Article 2</h3>
+          <div>
+            <span class="tag-pill">{'Misc. (Prose and Poetry)'}</span>
+          </div>
+        </div>
         <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
         </p>
-        <span class="tag-pill">{'Misc. (Prose and Poetry)'}</span>
         <a href='/' >Read the full article</a>
       </div>
-      <div class='fake-wrap'>
-        <h3>Article 3</h3>
+      <div class="writing-component">
+        <div class="writing-header">
+          <h3>Article 3</h3>
+          <div>
+            <span class="tag-pill">{'Misc. (Prose and Poetry)'}</span>
+          </div>
+        </div>
         <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
           loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
         </p>
-        <span class="tag-pill">{'Misc. (Prose and Poetry)'}</span>
         <a href='/' >Read the full article</a>
       </div>
 
