@@ -20,7 +20,7 @@
   <div class="container">
     <div class="intro-component">
       <h1>
-        Systems design with humans in mind
+        Systems design with the human in mind
       </h1>
       <p>
         Analytics Engineer with professional experience in healthcare and manufacturing. My educational background is in Logistics Mgmt / Supply Chain. 
@@ -50,6 +50,7 @@
 <section class="section">
   <div class="container">
     <h2>Highlighted Projects</h2>
+    <hr>
     {#if projects}
     <div class="project-component">
         {#each projects as project}
@@ -82,6 +83,7 @@
 <section class="section">
   <div class="container">
     <h2>Recent Experience</h2>
+    <hr>
     <div class="exp-component">
       <div class="exp-header">
         <div class="exp-where">
@@ -122,53 +124,52 @@
 <section class="section">
   <div class="container">
     <h2>Various Writings</h2>
-      <div class="writing-component">
-        <div class="writing-header">
-          <h3>Article 1</h3>
-          <div>
-            <span class="tag-pill">Human Behavior X Process Design</span>
-          </div>
+    <hr>
+    <div class="writing-component">
+      <div class="writing-header">
+        <h3>Article 1</h3>
+        <div>
+          <span class="tag-pill">Human Behavior X Process Design</span>
         </div>
-        <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        </p>
-        <a href='/' >Read the full article</a>
       </div>
-      <div class="writing-component">
-        <div class="writing-header">
-          <h3>Article 2</h3>
-          <div>
-            <span class="tag-pill">{'Misc. (Prose and Poetry)'}</span>
-          </div>
+      <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+      </p>
+      <a href='/' >Read the full article</a>
+    </div>
+    <div class="writing-component">
+      <div class="writing-header">
+        <h3>Article 2</h3>
+        <div>
+          <span class="tag-pill">{'Misc. (Prose and Poetry)'}</span>
         </div>
-        <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        </p>
-        <a href='/' >Read the full article</a>
       </div>
-      <div class="writing-component">
-        <div class="writing-header">
-          <h3>Article 3</h3>
-          <div>
-            <span class="tag-pill">{'Misc. (Prose and Poetry)'}</span>
-          </div>
+      <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+      </p>
+      <a href='/' >Read the full article</a>
+    </div>
+    <div class="writing-component">
+      <div class="writing-header">
+        <h3>Article 3</h3>
+        <div>
+          <span class="tag-pill">{'Misc. (Prose and Poetry)'}</span>
         </div>
-        <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-          loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        </p>
-        <a href='/' >Read the full article</a>
       </div>
-
-
+      <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
+      </p>
+      <a href='/' >Read the full article</a>
+    </div>
   </div>
 </section>
 

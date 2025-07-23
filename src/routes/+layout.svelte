@@ -55,7 +55,7 @@
       <a href="/writing">Writing</a>
       <a href="/">Photos</a>
 	  <a href="/contact">Contact</a>
-      <button class="nav-button">Download Resume</button>
+      <button class="clip-button"><span>Download Resume</span></button>
   </div>
 </nav>
 
@@ -68,7 +68,7 @@
 </div>
 <footer>
   <div class="footer-info">
-    <h3>Systems design with humans in mind</h3>
+    <h3>Systems design with the human in mind</h3>
     <p>Working independently / Open to FTE roles</p>
   </div>
   <div class="footer-links">
