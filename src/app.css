@@ -2,7 +2,7 @@
 :root {
   /* Light mode colors */
   --bg-primary: #fafafa;
-  --bg-secondary: #fafafa; /* Cards, components */
+  --bg-secondary: #f5f5f5 ; /* Cards, components */
   --text-primary: #1a1a1a;
   --text-secondary: #4a5568;
   --text-tertiary: #6b7280;
@@ -79,7 +79,7 @@ body {
 }
 
 .web-link:hover {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
   color: var(--text-secondary);
   border-color: var(--border-color);
   border-radius: 0.375rem;
@@ -159,7 +159,8 @@ body {
 }
 
 .mobile-link:hover {
-  border-bottom: 1px solid;
+  background-color: var(--bg-secondary);
+  /* border-bottom: 1px solid; */
   border-color: var(--text-primary);
 }
 
@@ -324,7 +325,9 @@ body {
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
   font-weight: 550;
+  color: var(--text-primary);
 }
+
 
 
 /* Responsive padding adjustments */
@@ -365,7 +368,7 @@ body {
 .intro-component p {
   font-size: 1.125rem;
   line-height: 1.6;
-  color: #4a5568;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -397,7 +400,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #4a5568;
+  background-color: var(--text-secondary);
   transform: translateY(-1px);
 }
 
@@ -410,8 +413,9 @@ body {
 
 .btn-secondary:hover {
   background-color: var(--bg-primary);
-  color: #4a5568;
+  color: var(--text-secondary);
   border-color: var(--border-color);
+  transform: translateY(-1px);
 }
 
 /* Responsive adjustments */
@@ -490,7 +494,7 @@ body {
 .project-footer p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #4a5568;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -595,7 +599,7 @@ body {
 .exp-component li {
  font-size: 1rem;
  line-height: 1.6;
- color: #4a5568;
+ color: var(--text-secondary);
  margin-bottom: 0.75rem;
 }
 
@@ -644,7 +648,7 @@ body {
 .writing-component p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #4a5568;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -779,8 +783,8 @@ footer {
 
 .tag-pill {
   display: inline-block;
-  background-color: var(--bg-primary);
-  color: #4a5568;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
   padding: 0.375rem 0.75rem;
   border-radius: 1rem;
   font-size: 0.875rem;
@@ -791,8 +795,8 @@ footer {
 
 .tag-rect {
   display: inline-block;
-  background-color: var(--bg-primary);
-  color: #4a5568;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
   padding: 0.5rem 0.75rem;
   border-radius: 0.4rem;
   font-size: 0.75rem;

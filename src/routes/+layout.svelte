@@ -60,9 +60,9 @@
     
     <!-- Desktop navigation links (hidden on mobile) -->
     <div class="web-menu">
-      <a class="web-link" href="/projects">Projects</a>
-      <a class="web-link"  href="/writing">Experience</a>
-      <a class="web-link"  href="/">Writing</a>
+      <a class="web-link" href="#project-section">Projects</a>
+      <a class="web-link"  href="#exp-section">Experience</a>
+      <a class="web-link"  href="#writing-section">Writing</a>
       <a href="https://storage.googleapis.com/portfolio-project-resume/resume_2025.pdf" class="clip-button">
         <span>Download Resume</span>
       </a>
@@ -79,9 +79,9 @@
   
   <!-- Mobile menu (hidden by default) -->
   <div id='menu-modal' class="mobile-menu">
-    <a class='mobile-link' href="/projects">Projects</a>
-    <a class='mobile-link' href="/writing">Experience</a>
-    <a class='mobile-link' href="/">Writing</a>
+    <a class='mobile-link' href="#project-section">Projects</a>
+    <a class='mobile-link' href="#exp-section">Experience</a>
+    <a class='mobile-link' href="#writing-section">Writing</a>
 	  <a href="https://storage.googleapis.com/portfolio-project-resume/resume_2025.pdf" 
       download
       class="clip-button">

@@ -48,7 +48,7 @@
 
 
 <!-- Recent Projects -->
-<section class="section">
+<section id="project-section" class="section">
   <div class="container">
     <h2>Highlighted Projects</h2>
     <hr>
@@ -81,7 +81,7 @@
 
 
 <!-- experience -->
-<section class="section">
+<section id="exp-section" class="section">
   <div class="container">
     <h2>Recent Experience</h2>
     <hr>
@@ -122,7 +122,7 @@
 
 <!-- writing -->
 
-<section class="section">
+<section id="writing-section" class="section">
   <div class="container">
     <h2>Various Writings</h2>
     <hr>
