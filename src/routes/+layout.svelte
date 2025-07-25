@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
 	import '../app.css';
   import { Mail } from 'lucide-svelte';
   import { siGithub } from 'simple-icons';
   import BrandIcon from "$lib/BrandIcon.svelte";
   import LinkedInIcon from "$lib/LinkedInIcon.svelte";
+ 
 
 
   let menuToggled = false; 
@@ -17,15 +18,22 @@
     } else {
       mobileMenu?.classList.add('open');
       menuToggled = true; 
-
     }
+  };
 
-  } 
+
+
+
 
 	let { children } = $props();
 </script>
 
+<!-- 
 
+TODO ADD GCP DOWNLOAD RESUME LINK TWICE BELOW! 
+
+
+-->
 
 <nav class="navbar">
   <div class="nav-container">
@@ -35,10 +43,13 @@
     <!-- Desktop navigation links (hidden on mobile) -->
     <div class="nav-links">
       <a href="/projects">Projects</a>
-      <a href="/writing">Writing</a>
-      <a href="/">Photos</a>
-	  <a href="/contact">Contact</a>
-      <button class="clip-button"><span>Download Resume</span></button>
+      <a href="/writing">Experience</a>
+      <a href="/">Writing</a>
+      <a href="https://storage.googleapis.com/portfolio-project-resume/resume_2025.pdf" 
+         download
+         class="clip-button">
+        <span>Download Resume</span>
+      </a>
     </div>
     
     <!-- Mobile hamburger button (hidden on desktop) -->
@@ -52,10 +63,13 @@
   <!-- Mobile menu (hidden by default) -->
   <div id='menu-modal' class="mobile-menu">
     <a href="/projects">Projects</a>
-      <a href="/writing">Writing</a>
-      <a href="/">Photos</a>
-	  <a href="/contact">Contact</a>
-      <button class="clip-button"><span>Download Resume</span></button>
+    <a href="/writing">Experience</a>
+    <a href="/">Writing</a>
+	  <a href="https://storage.googleapis.com/portfolio-project-resume/resume_2025.pdf" 
+      download
+      class="clip-button">
+        <span>Download Resume</span>
+      </a>
   </div>
 </nav>
 

@@ -26,3 +26,4 @@ vite.config.ts.timestamp-*
 todo.txt
 .env
 project_images/
+photos/

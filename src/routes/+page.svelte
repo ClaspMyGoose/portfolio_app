@@ -9,10 +9,10 @@
   import LinkedInIcon from "$lib/LinkedInIcon.svelte";
 
 
-  import * as simpleIcons from 'simple-icons';
+
   
-  
-  const { projects, experience, writing }: PageData = data;
+  const { projects, writing }: PageData = data;
+
 
 </script>
 
@@ -46,19 +46,20 @@
 </section>
 
 
+
 <!-- Recent Projects -->
 <section class="section">
   <div class="container">
     <h2>Highlighted Projects</h2>
     <hr>
     {#if projects}
-    <div class="project-component">
-        {#each projects as project}
-          <img src={`data:image/png;base64,${project.project_thumbnail}`} alt="Dynamic generated alt text">
+      {#each projects as project}
+        <div class="project-component">
+          <img src={project.project_image_link} alt={`Thumbnail for ${project.project_name} project.`}>
           <div class="project-content">
             <div class="project-header">
               <h3>{project.project_name}</h3>
-              <span class="tag-pill">{project.project_tags[0]}</span>
+              <span class="tag-pill">{project.project_main_tag}</span>
             </div>
             <div class="project-footer">
               <p>{project.project_description}</p>
@@ -67,11 +68,11 @@
                 <span class="tag-rect">{tag}</span>
                 {/each}
               </div>
-              <span><BrandIcon icon={siGithub} size={16}/>View Source</span>    
+              <a href={project.project_link}><span class="source-link"><BrandIcon icon={siGithub} size={14}/> View Source</span></a>    
             </div>
           </div>
-        {/each}
-    </div>
+        </div>
+      {/each}
     {:else}
       <p>There was an issue getting your data!</p>
     {/if}
@@ -125,51 +126,18 @@
   <div class="container">
     <h2>Various Writings</h2>
     <hr>
-    <div class="writing-component">
-      <div class="writing-header">
-        <h3>Article 1</h3>
-        <div>
-          <span class="tag-pill">Human Behavior X Process Design</span>
+    {#each writing as article}
+      <div class="writing-component">
+        <div class="writing-header">
+          <h3>{article.piece_title}</h3>
+          <div>
+            <span class="tag-pill">{article.piece_category}</span>
+          </div>
         </div>
+        <p>{article.piece_text}</p>
+        <a href='/' >Read the full article</a>
       </div>
-      <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-      </p>
-      <a href='/' >Read the full article</a>
-    </div>
-    <div class="writing-component">
-      <div class="writing-header">
-        <h3>Article 2</h3>
-        <div>
-          <span class="tag-pill">{'Misc. (Prose and Poetry)'}</span>
-        </div>
-      </div>
-      <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-      </p>
-      <a href='/' >Read the full article</a>
-    </div>
-    <div class="writing-component">
-      <div class="writing-header">
-        <h3>Article 3</h3>
-        <div>
-          <span class="tag-pill">{'Misc. (Prose and Poetry)'}</span>
-        </div>
-      </div>
-      <p>loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-        loren ipsum loren ipsumloren ipsum loren ipsumloren ipsum loren ipsum
-      </p>
-      <a href='/' >Read the full article</a>
-    </div>
+    {/each}
   </div>
 </section>
 

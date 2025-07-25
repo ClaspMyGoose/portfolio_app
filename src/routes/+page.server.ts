@@ -1,11 +1,10 @@
 import pool from '$lib/db'
-
-
+ 
+// TODO do writing pull 
 export async function load() { 
 
     const results: ResultsObject = {
         projects: [],
-        experience: [], 
         writing: []
     }
 
@@ -15,6 +14,14 @@ export async function load() {
     } catch(error) {
         console.error(`DB error: ${error}`);
     }
+
+    try { 
+        const result = await pool.query('SELECT * FROM writing;')
+        results.writing = result.rows
+    } catch(error) {
+        console.error(`DB error: ${error}`);
+    }
+
 
     return results;
 }
