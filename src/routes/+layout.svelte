@@ -4,10 +4,37 @@
   import { siGithub } from 'simple-icons';
   import BrandIcon from "$lib/BrandIcon.svelte";
   import LinkedInIcon from "$lib/LinkedInIcon.svelte";
- 
+  import { onMount } from 'svelte'; 
 
+  let darkMode = $state(false); 
+  let menuToggled = $state(false);
 
-  let menuToggled = false; 
+  
+  
+  const applyTheme = () => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+  
+  onMount(() => {
+    // Check localStorage and system preference
+    const saved = localStorage.getItem('darkMode');
+    if (saved !== null) {
+      darkMode = JSON.parse(saved);
+    } else {
+      darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    applyTheme()
+  });
+
+  const toggleDarkMode = () => {
+    darkMode = !darkMode;
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    applyTheme();
+  }
 
   const toggleMenu = () => {
     const mobileMenu = document.getElementById('menu-modal')
@@ -22,18 +49,9 @@
   };
 
 
-
-
-
 	let { children } = $props();
+
 </script>
-
-<!-- 
-
-TODO ADD GCP DOWNLOAD RESUME LINK TWICE BELOW! 
-
-
--->
 
 <nav class="navbar">
   <div class="nav-container">
@@ -41,15 +59,14 @@ TODO ADD GCP DOWNLOAD RESUME LINK TWICE BELOW!
     <a href="/" class="nav-home"><span class="name-underline">Michael Bearden</span></a>
     
     <!-- Desktop navigation links (hidden on mobile) -->
-    <div class="nav-links">
-      <a href="/projects">Projects</a>
-      <a href="/writing">Experience</a>
-      <a href="/">Writing</a>
-      <a href="https://storage.googleapis.com/portfolio-project-resume/resume_2025.pdf" 
-         download
-         class="clip-button">
+    <div class="web-menu">
+      <a class="web-link" href="/projects">Projects</a>
+      <a class="web-link"  href="/writing">Experience</a>
+      <a class="web-link"  href="/">Writing</a>
+      <a href="https://storage.googleapis.com/portfolio-project-resume/resume_2025.pdf" class="clip-button">
         <span>Download Resume</span>
       </a>
+      <button onclick={toggleDarkMode} class="theme-toggle">{darkMode ? '☀️' : '🌙'}</button>
     </div>
     
     <!-- Mobile hamburger button (hidden on desktop) -->
@@ -62,14 +79,15 @@ TODO ADD GCP DOWNLOAD RESUME LINK TWICE BELOW!
   
   <!-- Mobile menu (hidden by default) -->
   <div id='menu-modal' class="mobile-menu">
-    <a href="/projects">Projects</a>
-    <a href="/writing">Experience</a>
-    <a href="/">Writing</a>
+    <a class='mobile-link' href="/projects">Projects</a>
+    <a class='mobile-link' href="/writing">Experience</a>
+    <a class='mobile-link' href="/">Writing</a>
 	  <a href="https://storage.googleapis.com/portfolio-project-resume/resume_2025.pdf" 
       download
       class="clip-button">
         <span>Download Resume</span>
       </a>
+    <button onclick={toggleDarkMode} class="theme-toggle">{darkMode ? '☀️' : '🌙'}</button>
   </div>
 </nav>
 

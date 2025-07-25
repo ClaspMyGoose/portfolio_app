@@ -30,7 +30,7 @@
       <div class="button-group">
         <a href="mailto:michael.bearden1@outlook.com" class="btn btn-primary">
           <Mail size={16}/>
-          Get in touch
+          Say Hello!
         </a>
         <a href="https://github.com/ClaspMyGoose" class="btn btn-secondary">
           <BrandIcon icon={siGithub} size={16}/>
