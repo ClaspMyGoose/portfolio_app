@@ -2,7 +2,7 @@
 
 
 	import type { PageData }  from "./$types";
-  export let data: PageData;
+  // export let data: PageData;
   import { Mail } from 'lucide-svelte';
   import { siGithub } from 'simple-icons';
   import BrandIcon from "$lib/BrandIcon.svelte";
@@ -10,8 +10,9 @@
 
 
 
-  
+  let { data } = $props()  
   const { projects, writing }: PageData = data;
+
 
 
 </script>
@@ -134,8 +135,12 @@
             <span class="tag-pill">{article.piece_category}</span>
           </div>
         </div>
+        {#if article.piece_text.length > 300}
+        <p>{article.piece_text.slice(0, 300) + '...(cont.)'}</p>
+        <a href={`/writing/${article.piece_id}`} >Read the full article</a>
+        {:else}
         <p>{article.piece_text}</p>
-        <a href='/' >Read the full article</a>
+        {/if}
       </div>
     {/each}
   </div>

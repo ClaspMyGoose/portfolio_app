@@ -36,18 +36,32 @@
     applyTheme();
   }
 
-  const toggleMenu = () => {
-    const mobileMenu = document.getElementById('menu-modal')
 
-    if (menuToggled) {
-      mobileMenu?.classList.remove('open');
-      menuToggled = false;
-    } else {
-      mobileMenu?.classList.add('open');
-      menuToggled = true; 
+  const handleClickOutside = (event: MouseEvent) => {
+
+    if (menuToggled && event.target instanceof Element && event.target.closest('.mobile-menu a')) {
+    menuToggled = false;
+    return;
     }
-  };
 
+
+    if (menuToggled && event.target instanceof Element && !event.target.closest('.mobile-menu, .hamburger')) {
+      menuToggled = false;
+    }
+  }
+
+  $effect(() => {
+    if (menuToggled) {
+      document.addEventListener('click', handleClickOutside);
+    } else {
+      document.removeEventListener('click', handleClickOutside);
+    }
+    
+    // Cleanup
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  });
 
 	let { children } = $props();
 
@@ -60,17 +74,21 @@
     
     <!-- Desktop navigation links (hidden on mobile) -->
     <div class="web-menu">
-      <a class="web-link" href="#project-section">Projects</a>
-      <a class="web-link"  href="#exp-section">Experience</a>
-      <a class="web-link"  href="#writing-section">Writing</a>
+      <a class="web-link" href="/#project-section">Projects</a>
+      <a class="web-link"  href="/#exp-section">Experience</a>
+      <a class="web-link"  href="/#writing-section">Writing</a>
       <a href="https://storage.googleapis.com/portfolio-project-resume/resume_2025.pdf" class="clip-button">
         <span>Download Resume</span>
       </a>
-      <button onclick={toggleDarkMode} class="theme-toggle">{darkMode ? '☀️' : '🌙'}</button>
+      <!-- <button onclick={toggleDarkMode} class="theme-toggle">{darkMode ? '☀️' : '🌙'}</button> -->
+      <label class="theme-switch">
+        <input type="checkbox" checked={darkMode} onchange={() => toggleDarkMode()}>
+        <span class="slider"></span>
+      </label>
     </div>
     
     <!-- Mobile hamburger button (hidden on desktop) -->
-    <button onclick={toggleMenu} class="hamburger" aria-label="Toggle menu">
+    <button onclick={() => menuToggled = !menuToggled} class="hamburger" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
@@ -78,16 +96,22 @@
   </div>
   
   <!-- Mobile menu (hidden by default) -->
-  <div id='menu-modal' class="mobile-menu">
-    <a class='mobile-link' href="#project-section">Projects</a>
-    <a class='mobile-link' href="#exp-section">Experience</a>
-    <a class='mobile-link' href="#writing-section">Writing</a>
-	  <a href="https://storage.googleapis.com/portfolio-project-resume/resume_2025.pdf" 
-      download
-      class="clip-button">
-        <span>Download Resume</span>
-      </a>
-    <button onclick={toggleDarkMode} class="theme-toggle">{darkMode ? '☀️' : '🌙'}</button>
+  <div id='menu-modal' class="mobile-menu" class:open={menuToggled}>
+    <a class='mobile-link' href="/#project-section">Projects</a>
+    <a class='mobile-link' href="/#exp-section">Experience</a>
+    <a class='mobile-link' href="/#writing-section">Writing</a>
+    <div class='mobile-buttons'>
+      <a href="https://storage.googleapis.com/portfolio-project-resume/resume_2025.pdf" 
+        download
+        class="clip-button">
+          <span>Download Resume</span>
+        </a>
+      <!-- <button onclick={toggleDarkMode} class="theme-toggle">{darkMode ? '☀️' : '🌙'}</button> -->
+      <label class="theme-switch">
+        <input type="checkbox" checked={darkMode} onchange={() => toggleDarkMode()}>
+        <span class="slider"></span>
+      </label>
+    </div>
   </div>
 </nav>
 

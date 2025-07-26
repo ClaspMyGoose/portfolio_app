@@ -1,6 +1,5 @@
 import pool from '$lib/db'
  
-// TODO do writing pull 
 export async function load() { 
 
     const results: ResultsObject = {

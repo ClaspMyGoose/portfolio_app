@@ -1,6 +1,9 @@
 
 --  ~ Reworked Create 
 
+DROP TABLE project;
+
+
 CREATE TABLE project (
     project_id SERIAL PRIMARY KEY,
     project_name TEXT,
@@ -26,7 +29,7 @@ CREATE TABLE project (
 INSERT INTO project VALUES (
     DEFAULT, 
     'Portfolio Svelte App', 
-    'A personal portfolio application built with Svelte, a Javascript web development framework. In addition to the front end code (Typescript/Javascript, HTML, CSS), the data for the site is being pulled from a PostgreSQL database instance and Google BigQuery. The plan is to use this website both for professional purposes and as a permanent home for my creative writing, photos, and projects!',
+    'A personal portfolio application built with Svelte, a Javascript web development framework. In addition to the front end code (Typescript/Javascript, HTML, CSS), the data for the site is being pulled from a PostgreSQL database instance and Google Cloud Storage. The plan is to use this website both for professional purposes and as a permanent home for my creative writing, photos, and projects!',
     'WebDev',
     array['JS','Svelte','HTML', 'CSS', 'SQL', 'TS', 'WebDev'],
     'https://github.com/ClaspMyGoose/portfolio_app',
